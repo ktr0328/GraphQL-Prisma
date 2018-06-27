@@ -14,7 +14,14 @@ const toRoma = word => {
       const readings = tokenizer.tokenize(word)
         .map(e => e.reading)
         .map(e => jaconv.toHiragana(e))
-        .map(e => jaconv.toHebon(e))
+        .map(e => {
+          let letter = jaconv.toHebon(e)
+          letter = letter.toLowerCase()
+          letter = letter.charAt(0).toUpperCase() + letter.slice(1)
+          return letter
+        })
+        .map(e => e.replace(/\W/g, ''))
+        .filter(e => e)
         .join('')
       resolve(readings)
     })
