@@ -4,7 +4,7 @@ const { toRoma } = require('./charParse')
 
 const BASE = path.resolve(__dirname, '../../', 'data')
 const PATH = path.resolve(BASE, 'raw', '260002bear.csv')
-const raw = fs.readFileSync(PATH, 'utf-8')
+const raw = fs.readFileSync(path.resolve(__dirname, '../../raw/260002bear.csv'), 'utf-8')
 
 const tempArray = raw.split('\r\n')
 const rawArray = tempArray.map(e => e.split(','))
@@ -12,12 +12,14 @@ const jpColumns = rawArray[0];
 const restData = tempArray.slice(1);
 
 (async () => {
+  let id = 0
   const column = await Promise.all(jpColumns.map(e => toRoma(e)))
   const data = {
     valueType: 'nodes',
     values: restData.map(e => {
       const row =  {
-        '_typeName': 'kuma'
+        '_typeName': 'Bear260002',
+        'id': `id${id++}`
       }
       column.forEach((v, i) => {
         const arr = e.split(',')

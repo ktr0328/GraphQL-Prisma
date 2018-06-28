@@ -8,6 +8,9 @@ const Query = {
   },
   users: (_, args, context, info) => {
     return context.prisma.query.users({}, info)
+  },
+  bear260002s: (_, args, context, info) => {
+    return context.prisma.query.bear260002s({}, info)
   }
 }
 

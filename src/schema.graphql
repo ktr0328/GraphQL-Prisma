@@ -1,9 +1,11 @@
 # import Post from './generated/prisma.graphql'
 # import User from './generated/prisma.graphql'
+# import Bear260002 from './generated/prisma.graphql'
 
 type Query {
   user(id: ID!): User
   users: [User!]!
+  bear260002s: [Bear260002]
 }
 
 type Mutation {

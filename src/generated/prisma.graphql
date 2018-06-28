@@ -1,5 +1,9 @@
 # source: http://localhost:4466
-# timestamp: Sat Jun 23 2018 18:08:58 GMT+0900 (JST)
+# timestamp: Thu Jun 28 2018 23:34:20 GMT+0900 (JST)
+
+type AggregateBear260002 {
+  count: Int!
+}
 
 type AggregateUser {
   count: Int!
@@ -10,6 +14,740 @@ type BatchPayload {
   count: Long!
 }
 
+type Bear260002 implements Node {
+  id: ID!
+  KansatsuBasho: String
+  KankyoKubun: String
+  Keido: String
+  Ido: String
+  MokugekiNengappi: String
+  Seiju: String
+  YoJu: String
+  SonotaHiki: String
+  MokugekiJiNoJokyo: String
+  KotaiNoJokyo: String
+  SonogoNoShochi: String
+  JichitaiKodo: String
+  ShichosonMei: String
+}
+
+"""A connection to a list of items."""
+type Bear260002Connection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [Bear260002Edge]!
+  aggregate: AggregateBear260002!
+}
+
+input Bear260002CreateInput {
+  KansatsuBasho: String
+  KankyoKubun: String
+  Keido: String
+  Ido: String
+  MokugekiNengappi: String
+  Seiju: String
+  YoJu: String
+  SonotaHiki: String
+  MokugekiJiNoJokyo: String
+  KotaiNoJokyo: String
+  SonogoNoShochi: String
+  JichitaiKodo: String
+  ShichosonMei: String
+}
+
+"""An edge in a connection."""
+type Bear260002Edge {
+  """The item at the end of the edge."""
+  node: Bear260002!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum Bear260002OrderByInput {
+  id_ASC
+  id_DESC
+  KansatsuBasho_ASC
+  KansatsuBasho_DESC
+  KankyoKubun_ASC
+  KankyoKubun_DESC
+  Keido_ASC
+  Keido_DESC
+  Ido_ASC
+  Ido_DESC
+  MokugekiNengappi_ASC
+  MokugekiNengappi_DESC
+  Seiju_ASC
+  Seiju_DESC
+  YoJu_ASC
+  YoJu_DESC
+  SonotaHiki_ASC
+  SonotaHiki_DESC
+  MokugekiJiNoJokyo_ASC
+  MokugekiJiNoJokyo_DESC
+  KotaiNoJokyo_ASC
+  KotaiNoJokyo_DESC
+  SonogoNoShochi_ASC
+  SonogoNoShochi_DESC
+  JichitaiKodo_ASC
+  JichitaiKodo_DESC
+  ShichosonMei_ASC
+  ShichosonMei_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  createdAt_ASC
+  createdAt_DESC
+}
+
+type Bear260002PreviousValues {
+  id: ID!
+  KansatsuBasho: String
+  KankyoKubun: String
+  Keido: String
+  Ido: String
+  MokugekiNengappi: String
+  Seiju: String
+  YoJu: String
+  SonotaHiki: String
+  MokugekiJiNoJokyo: String
+  KotaiNoJokyo: String
+  SonogoNoShochi: String
+  JichitaiKodo: String
+  ShichosonMei: String
+}
+
+type Bear260002SubscriptionPayload {
+  mutation: MutationType!
+  node: Bear260002
+  updatedFields: [String!]
+  previousValues: Bear260002PreviousValues
+}
+
+input Bear260002SubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [Bear260002SubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [Bear260002SubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [Bear260002SubscriptionWhereInput!]
+
+  """
+  The subscription event gets dispatched when it's listed in mutation_in
+  """
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: Bear260002WhereInput
+}
+
+input Bear260002UpdateInput {
+  KansatsuBasho: String
+  KankyoKubun: String
+  Keido: String
+  Ido: String
+  MokugekiNengappi: String
+  Seiju: String
+  YoJu: String
+  SonotaHiki: String
+  MokugekiJiNoJokyo: String
+  KotaiNoJokyo: String
+  SonogoNoShochi: String
+  JichitaiKodo: String
+  ShichosonMei: String
+}
+
+input Bear260002WhereInput {
+  """Logical AND on all given filters."""
+  AND: [Bear260002WhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [Bear260002WhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [Bear260002WhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  KansatsuBasho: String
+
+  """All values that are not equal to given value."""
+  KansatsuBasho_not: String
+
+  """All values that are contained in given list."""
+  KansatsuBasho_in: [String!]
+
+  """All values that are not contained in given list."""
+  KansatsuBasho_not_in: [String!]
+
+  """All values less than the given value."""
+  KansatsuBasho_lt: String
+
+  """All values less than or equal the given value."""
+  KansatsuBasho_lte: String
+
+  """All values greater than the given value."""
+  KansatsuBasho_gt: String
+
+  """All values greater than or equal the given value."""
+  KansatsuBasho_gte: String
+
+  """All values containing the given string."""
+  KansatsuBasho_contains: String
+
+  """All values not containing the given string."""
+  KansatsuBasho_not_contains: String
+
+  """All values starting with the given string."""
+  KansatsuBasho_starts_with: String
+
+  """All values not starting with the given string."""
+  KansatsuBasho_not_starts_with: String
+
+  """All values ending with the given string."""
+  KansatsuBasho_ends_with: String
+
+  """All values not ending with the given string."""
+  KansatsuBasho_not_ends_with: String
+  KankyoKubun: String
+
+  """All values that are not equal to given value."""
+  KankyoKubun_not: String
+
+  """All values that are contained in given list."""
+  KankyoKubun_in: [String!]
+
+  """All values that are not contained in given list."""
+  KankyoKubun_not_in: [String!]
+
+  """All values less than the given value."""
+  KankyoKubun_lt: String
+
+  """All values less than or equal the given value."""
+  KankyoKubun_lte: String
+
+  """All values greater than the given value."""
+  KankyoKubun_gt: String
+
+  """All values greater than or equal the given value."""
+  KankyoKubun_gte: String
+
+  """All values containing the given string."""
+  KankyoKubun_contains: String
+
+  """All values not containing the given string."""
+  KankyoKubun_not_contains: String
+
+  """All values starting with the given string."""
+  KankyoKubun_starts_with: String
+
+  """All values not starting with the given string."""
+  KankyoKubun_not_starts_with: String
+
+  """All values ending with the given string."""
+  KankyoKubun_ends_with: String
+
+  """All values not ending with the given string."""
+  KankyoKubun_not_ends_with: String
+  Keido: String
+
+  """All values that are not equal to given value."""
+  Keido_not: String
+
+  """All values that are contained in given list."""
+  Keido_in: [String!]
+
+  """All values that are not contained in given list."""
+  Keido_not_in: [String!]
+
+  """All values less than the given value."""
+  Keido_lt: String
+
+  """All values less than or equal the given value."""
+  Keido_lte: String
+
+  """All values greater than the given value."""
+  Keido_gt: String
+
+  """All values greater than or equal the given value."""
+  Keido_gte: String
+
+  """All values containing the given string."""
+  Keido_contains: String
+
+  """All values not containing the given string."""
+  Keido_not_contains: String
+
+  """All values starting with the given string."""
+  Keido_starts_with: String
+
+  """All values not starting with the given string."""
+  Keido_not_starts_with: String
+
+  """All values ending with the given string."""
+  Keido_ends_with: String
+
+  """All values not ending with the given string."""
+  Keido_not_ends_with: String
+  Ido: String
+
+  """All values that are not equal to given value."""
+  Ido_not: String
+
+  """All values that are contained in given list."""
+  Ido_in: [String!]
+
+  """All values that are not contained in given list."""
+  Ido_not_in: [String!]
+
+  """All values less than the given value."""
+  Ido_lt: String
+
+  """All values less than or equal the given value."""
+  Ido_lte: String
+
+  """All values greater than the given value."""
+  Ido_gt: String
+
+  """All values greater than or equal the given value."""
+  Ido_gte: String
+
+  """All values containing the given string."""
+  Ido_contains: String
+
+  """All values not containing the given string."""
+  Ido_not_contains: String
+
+  """All values starting with the given string."""
+  Ido_starts_with: String
+
+  """All values not starting with the given string."""
+  Ido_not_starts_with: String
+
+  """All values ending with the given string."""
+  Ido_ends_with: String
+
+  """All values not ending with the given string."""
+  Ido_not_ends_with: String
+  MokugekiNengappi: String
+
+  """All values that are not equal to given value."""
+  MokugekiNengappi_not: String
+
+  """All values that are contained in given list."""
+  MokugekiNengappi_in: [String!]
+
+  """All values that are not contained in given list."""
+  MokugekiNengappi_not_in: [String!]
+
+  """All values less than the given value."""
+  MokugekiNengappi_lt: String
+
+  """All values less than or equal the given value."""
+  MokugekiNengappi_lte: String
+
+  """All values greater than the given value."""
+  MokugekiNengappi_gt: String
+
+  """All values greater than or equal the given value."""
+  MokugekiNengappi_gte: String
+
+  """All values containing the given string."""
+  MokugekiNengappi_contains: String
+
+  """All values not containing the given string."""
+  MokugekiNengappi_not_contains: String
+
+  """All values starting with the given string."""
+  MokugekiNengappi_starts_with: String
+
+  """All values not starting with the given string."""
+  MokugekiNengappi_not_starts_with: String
+
+  """All values ending with the given string."""
+  MokugekiNengappi_ends_with: String
+
+  """All values not ending with the given string."""
+  MokugekiNengappi_not_ends_with: String
+  Seiju: String
+
+  """All values that are not equal to given value."""
+  Seiju_not: String
+
+  """All values that are contained in given list."""
+  Seiju_in: [String!]
+
+  """All values that are not contained in given list."""
+  Seiju_not_in: [String!]
+
+  """All values less than the given value."""
+  Seiju_lt: String
+
+  """All values less than or equal the given value."""
+  Seiju_lte: String
+
+  """All values greater than the given value."""
+  Seiju_gt: String
+
+  """All values greater than or equal the given value."""
+  Seiju_gte: String
+
+  """All values containing the given string."""
+  Seiju_contains: String
+
+  """All values not containing the given string."""
+  Seiju_not_contains: String
+
+  """All values starting with the given string."""
+  Seiju_starts_with: String
+
+  """All values not starting with the given string."""
+  Seiju_not_starts_with: String
+
+  """All values ending with the given string."""
+  Seiju_ends_with: String
+
+  """All values not ending with the given string."""
+  Seiju_not_ends_with: String
+  YoJu: String
+
+  """All values that are not equal to given value."""
+  YoJu_not: String
+
+  """All values that are contained in given list."""
+  YoJu_in: [String!]
+
+  """All values that are not contained in given list."""
+  YoJu_not_in: [String!]
+
+  """All values less than the given value."""
+  YoJu_lt: String
+
+  """All values less than or equal the given value."""
+  YoJu_lte: String
+
+  """All values greater than the given value."""
+  YoJu_gt: String
+
+  """All values greater than or equal the given value."""
+  YoJu_gte: String
+
+  """All values containing the given string."""
+  YoJu_contains: String
+
+  """All values not containing the given string."""
+  YoJu_not_contains: String
+
+  """All values starting with the given string."""
+  YoJu_starts_with: String
+
+  """All values not starting with the given string."""
+  YoJu_not_starts_with: String
+
+  """All values ending with the given string."""
+  YoJu_ends_with: String
+
+  """All values not ending with the given string."""
+  YoJu_not_ends_with: String
+  SonotaHiki: String
+
+  """All values that are not equal to given value."""
+  SonotaHiki_not: String
+
+  """All values that are contained in given list."""
+  SonotaHiki_in: [String!]
+
+  """All values that are not contained in given list."""
+  SonotaHiki_not_in: [String!]
+
+  """All values less than the given value."""
+  SonotaHiki_lt: String
+
+  """All values less than or equal the given value."""
+  SonotaHiki_lte: String
+
+  """All values greater than the given value."""
+  SonotaHiki_gt: String
+
+  """All values greater than or equal the given value."""
+  SonotaHiki_gte: String
+
+  """All values containing the given string."""
+  SonotaHiki_contains: String
+
+  """All values not containing the given string."""
+  SonotaHiki_not_contains: String
+
+  """All values starting with the given string."""
+  SonotaHiki_starts_with: String
+
+  """All values not starting with the given string."""
+  SonotaHiki_not_starts_with: String
+
+  """All values ending with the given string."""
+  SonotaHiki_ends_with: String
+
+  """All values not ending with the given string."""
+  SonotaHiki_not_ends_with: String
+  MokugekiJiNoJokyo: String
+
+  """All values that are not equal to given value."""
+  MokugekiJiNoJokyo_not: String
+
+  """All values that are contained in given list."""
+  MokugekiJiNoJokyo_in: [String!]
+
+  """All values that are not contained in given list."""
+  MokugekiJiNoJokyo_not_in: [String!]
+
+  """All values less than the given value."""
+  MokugekiJiNoJokyo_lt: String
+
+  """All values less than or equal the given value."""
+  MokugekiJiNoJokyo_lte: String
+
+  """All values greater than the given value."""
+  MokugekiJiNoJokyo_gt: String
+
+  """All values greater than or equal the given value."""
+  MokugekiJiNoJokyo_gte: String
+
+  """All values containing the given string."""
+  MokugekiJiNoJokyo_contains: String
+
+  """All values not containing the given string."""
+  MokugekiJiNoJokyo_not_contains: String
+
+  """All values starting with the given string."""
+  MokugekiJiNoJokyo_starts_with: String
+
+  """All values not starting with the given string."""
+  MokugekiJiNoJokyo_not_starts_with: String
+
+  """All values ending with the given string."""
+  MokugekiJiNoJokyo_ends_with: String
+
+  """All values not ending with the given string."""
+  MokugekiJiNoJokyo_not_ends_with: String
+  KotaiNoJokyo: String
+
+  """All values that are not equal to given value."""
+  KotaiNoJokyo_not: String
+
+  """All values that are contained in given list."""
+  KotaiNoJokyo_in: [String!]
+
+  """All values that are not contained in given list."""
+  KotaiNoJokyo_not_in: [String!]
+
+  """All values less than the given value."""
+  KotaiNoJokyo_lt: String
+
+  """All values less than or equal the given value."""
+  KotaiNoJokyo_lte: String
+
+  """All values greater than the given value."""
+  KotaiNoJokyo_gt: String
+
+  """All values greater than or equal the given value."""
+  KotaiNoJokyo_gte: String
+
+  """All values containing the given string."""
+  KotaiNoJokyo_contains: String
+
+  """All values not containing the given string."""
+  KotaiNoJokyo_not_contains: String
+
+  """All values starting with the given string."""
+  KotaiNoJokyo_starts_with: String
+
+  """All values not starting with the given string."""
+  KotaiNoJokyo_not_starts_with: String
+
+  """All values ending with the given string."""
+  KotaiNoJokyo_ends_with: String
+
+  """All values not ending with the given string."""
+  KotaiNoJokyo_not_ends_with: String
+  SonogoNoShochi: String
+
+  """All values that are not equal to given value."""
+  SonogoNoShochi_not: String
+
+  """All values that are contained in given list."""
+  SonogoNoShochi_in: [String!]
+
+  """All values that are not contained in given list."""
+  SonogoNoShochi_not_in: [String!]
+
+  """All values less than the given value."""
+  SonogoNoShochi_lt: String
+
+  """All values less than or equal the given value."""
+  SonogoNoShochi_lte: String
+
+  """All values greater than the given value."""
+  SonogoNoShochi_gt: String
+
+  """All values greater than or equal the given value."""
+  SonogoNoShochi_gte: String
+
+  """All values containing the given string."""
+  SonogoNoShochi_contains: String
+
+  """All values not containing the given string."""
+  SonogoNoShochi_not_contains: String
+
+  """All values starting with the given string."""
+  SonogoNoShochi_starts_with: String
+
+  """All values not starting with the given string."""
+  SonogoNoShochi_not_starts_with: String
+
+  """All values ending with the given string."""
+  SonogoNoShochi_ends_with: String
+
+  """All values not ending with the given string."""
+  SonogoNoShochi_not_ends_with: String
+  JichitaiKodo: String
+
+  """All values that are not equal to given value."""
+  JichitaiKodo_not: String
+
+  """All values that are contained in given list."""
+  JichitaiKodo_in: [String!]
+
+  """All values that are not contained in given list."""
+  JichitaiKodo_not_in: [String!]
+
+  """All values less than the given value."""
+  JichitaiKodo_lt: String
+
+  """All values less than or equal the given value."""
+  JichitaiKodo_lte: String
+
+  """All values greater than the given value."""
+  JichitaiKodo_gt: String
+
+  """All values greater than or equal the given value."""
+  JichitaiKodo_gte: String
+
+  """All values containing the given string."""
+  JichitaiKodo_contains: String
+
+  """All values not containing the given string."""
+  JichitaiKodo_not_contains: String
+
+  """All values starting with the given string."""
+  JichitaiKodo_starts_with: String
+
+  """All values not starting with the given string."""
+  JichitaiKodo_not_starts_with: String
+
+  """All values ending with the given string."""
+  JichitaiKodo_ends_with: String
+
+  """All values not ending with the given string."""
+  JichitaiKodo_not_ends_with: String
+  ShichosonMei: String
+
+  """All values that are not equal to given value."""
+  ShichosonMei_not: String
+
+  """All values that are contained in given list."""
+  ShichosonMei_in: [String!]
+
+  """All values that are not contained in given list."""
+  ShichosonMei_not_in: [String!]
+
+  """All values less than the given value."""
+  ShichosonMei_lt: String
+
+  """All values less than or equal the given value."""
+  ShichosonMei_lte: String
+
+  """All values greater than the given value."""
+  ShichosonMei_gt: String
+
+  """All values greater than or equal the given value."""
+  ShichosonMei_gte: String
+
+  """All values containing the given string."""
+  ShichosonMei_contains: String
+
+  """All values not containing the given string."""
+  ShichosonMei_not_contains: String
+
+  """All values starting with the given string."""
+  ShichosonMei_starts_with: String
+
+  """All values not starting with the given string."""
+  ShichosonMei_not_starts_with: String
+
+  """All values ending with the given string."""
+  ShichosonMei_ends_with: String
+
+  """All values not ending with the given string."""
+  ShichosonMei_not_ends_with: String
+}
+
+input Bear260002WhereUniqueInput {
+  id: ID
+}
+
 """
 The `Long` scalar type represents non-fractional signed whole numeric values.
 Long can represent values between -(2^63) and 2^63 - 1.
@@ -18,11 +756,17 @@ scalar Long
 
 type Mutation {
   createUser(data: UserCreateInput!): User!
+  createBear260002(data: Bear260002CreateInput!): Bear260002!
   updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
+  updateBear260002(data: Bear260002UpdateInput!, where: Bear260002WhereUniqueInput!): Bear260002
   deleteUser(where: UserWhereUniqueInput!): User
+  deleteBear260002(where: Bear260002WhereUniqueInput!): Bear260002
   upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
+  upsertBear260002(where: Bear260002WhereUniqueInput!, create: Bear260002CreateInput!, update: Bear260002UpdateInput!): Bear260002!
   updateManyUsers(data: UserUpdateInput!, where: UserWhereInput): BatchPayload!
+  updateManyBear260002s(data: Bear260002UpdateInput!, where: Bear260002WhereInput): BatchPayload!
   deleteManyUsers(where: UserWhereInput): BatchPayload!
+  deleteManyBear260002s(where: Bear260002WhereInput): BatchPayload!
 }
 
 enum MutationType {
@@ -54,8 +798,11 @@ type PageInfo {
 
 type Query {
   users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
+  bear260002s(where: Bear260002WhereInput, orderBy: Bear260002OrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Bear260002]!
   user(where: UserWhereUniqueInput!): User
+  bear260002(where: Bear260002WhereUniqueInput!): Bear260002
   usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
+  bear260002sConnection(where: Bear260002WhereInput, orderBy: Bear260002OrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): Bear260002Connection!
 
   """Fetches an object given its ID"""
   node(
@@ -66,6 +813,7 @@ type Query {
 
 type Subscription {
   user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
+  bear260002(where: Bear260002SubscriptionWhereInput): Bear260002SubscriptionPayload
 }
 
 type User implements Node {
