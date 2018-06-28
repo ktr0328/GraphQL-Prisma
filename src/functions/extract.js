@@ -20,15 +20,19 @@ dirs.forEach(name => {
 ${inner}
 }
 `
-  fs.appendFile(path.resolve(__dirname, '../../dist/bundle.datamodel.graphql'), data, 'utf-8', err => {
+  const errorHandler = err => {
     if (err) console.log(err)
-  })
+  }
+  fs.appendFile(path.resolve(__dirname, '../../dist/bundle.datamodel.graphql'), data, 'utf-8', errorHandler)
 
   const lower = typeName.toLowerCase()
   const model = `
   ${lower}: (_, args, context, info) => context.prisma.query.${lower}({}, info),`
 
-  fs.appendFile(path.resolve(__dirname, '../../dist/bundle.schema.graphql'), model, 'utf-8', err => {
-    if (err) console.log(err)
-  })
+  fs.appendFile(path.resolve(__dirname, '../../dist/bundle.schema.graphql'), model, 'utf-8', errorHandler)
+
+
+  const importType = `# import ${typeName} from './generated/prisma.graphql'
+`
+  fs.appendFile(path.resolve(__dirname, '../../dist/bundle.imports.graphql'), importType, 'utf-8', errorHandler)
 })
