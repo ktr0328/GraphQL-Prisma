@@ -6,12 +6,8 @@ const Query = {
       }
     }, info)
   },
-  users: (_, args, context, info) => {
-    return context.prisma.query.users({}, info)
-  },
-  bear260002s: (_, args, context, info) => {
-    return context.prisma.query.bear260002s({}, info)
-  }
+  users: (_, args, context, info) => context.prisma.query.users({}, info),
+  bear260002s: (_, args, context, info) => context.prisma.query.bear260002s({}, info)
 }
 
 module.exports = Query
