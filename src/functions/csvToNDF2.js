@@ -13,7 +13,7 @@ const columns = tempArray[0].split(',')
 const parseColumn = word => {
   return new Promise((resolve, reject) => {
     axios({
-      url: `https://api.codic.jp/v1/engine/translate.json?text=${word}`,
+      url: `https://api.codic.jp/v1/engine/translate.json?text=${encodeURIComponent(word)}`,
       headers: {
         Authorization: 'Bearer 6ifQf3yJ9a5lAHVdFUhvbOX21vfBl4KlLY'
       },
@@ -24,4 +24,4 @@ const parseColumn = word => {
   })
 }
 
-parseColumn('こんにちは').then(e => console.log(e))
+parseColumn('こんにちは(分)').then(e => console.log(e))

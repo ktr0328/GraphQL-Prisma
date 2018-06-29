@@ -8,9 +8,11 @@
   "private": false,
   "dependencies": {
     "axios": "^0.18.0",
+    "csv": "^3.1.0",
     "graphql-yoga": "^1.14.10",
     "jaconv": "^1.0.1",
     "kuromoji": "^0.1.2",
-    "prisma-binding": "^2.1.0"
+    "prisma-binding": "^2.1.0",
+    "request": "^2.87.0"
   }
 }
